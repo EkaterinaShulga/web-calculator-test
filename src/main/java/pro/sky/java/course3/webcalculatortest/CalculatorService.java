@@ -4,12 +4,12 @@ public interface CalculatorService {
 
     String showHelloCalculator();
 
-    String returnAmount(Double num1, Double num2);
+    double returnAmount(double num1, double num2);
 
-    String returnDifference(Double num1, Double num2);
+    double returnDifference(double num1, double num2);
 
-    String returnMultiplication(Double num1, Double num2);
+    double returnMultiplication(double num1, double num2);
 
-    String returnDivision(Double num1, Double num2);
+    double returnDivision(double num1, double num2);
 
 }

@@ -24,12 +24,9 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String returnAmount(@RequestParam(value = "num1", required = false) Double i,
-                               @RequestParam(value = "num2", required = false) Double j) {
-        if (Objects.isNull(i) || Objects.isNull(j)) {
-            return "Не верно переданы параметры!";
-        }
-        return calculatorService.returnAmount(i, j);
+    public String returnAmount(@RequestParam(value = "num1") Double i,
+                               @RequestParam(value = "num2") Double j) {
+        return "Сложение " + calculatorService.returnAmount(i, j);
 
     }
 
@@ -39,7 +36,7 @@ public class CalculatorController {
         if (Objects.isNull(i) || Objects.isNull(j)) {
             return "Не верно переданы параметры!";
         }
-        return calculatorService.returnDifference(i, j);
+        return "Вычетание " + calculatorService.returnDifference(i, j);
     }
 
     @GetMapping(path = "/multiply")
@@ -48,15 +45,15 @@ public class CalculatorController {
         if (Objects.isNull(i) || Objects.isNull(j)) {
             return "Не верно переданы параметры!";
         }
-        return calculatorService.returnMultiplication(i, j);
+        return "Умножение " + calculatorService.returnMultiplication(i, j);
     }
 
     @GetMapping(path = "/divide")
     public String returnDivision(@RequestParam(value = "num1", required = false) Double i,
                                  @RequestParam(value = "num2", required = false) Double j) {
         if (Objects.isNull(i) || Objects.isNull(j)) {
-            return "Не верно переданы параметры!";
+           return "Не верно переданы параметры!";
         }
-        return calculatorService.returnDivision(i, j);
+        return "Деление " + calculatorService.returnDivision(i, j);
     }
 }
